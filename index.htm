@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Document</title>
+            <link rel="stylesheet" href="/css/reset.css" />
+            <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        </head>
+        <body>
+            <header>
+               <nav>
+                <div id="mobile-nav">
+                    <div id="logo">
+                      <a href="">
+                          <h1  id="h1-red">turbo.az</h1>
+                      </a>
+                      <a href="" >
+                          <h1>bina.az</h1>
+                      </a>
+                      <a href="">
+                          <h1>tap.az</h1>
+                      </a>
+                      <a href="" id="plus"></a>
+                    </div>
+                    <div id="selects">
+                      <div id="all-marks" class="select">
+                          <img src="img/redcar.png" alt="" />
+                          <span>Bütün markalar</span>
+                          <i class="fa-solid fa-chevron-down"></i>
+                      </div>
+                      <div id="filters" class="select" >
+                          <img src="img/filter.png" alt="" />
+                          <span>Filtrlər</span>
+                      </div>
+                      <div id="moto" class="select">
+                          <span>Moto</span>
+                          <i class="fa-solid fa-chevron-right"></i>
+                      </div>
+                      <p id="elan">Bu gün: <a href="">1608 yeni elan</a> </p>
+                    </div>
+                    <div id="adds">
+                      <img src="img/add.jpg" alt="" />
+                    </div>
+                  </div>
+
+                  <div id="filters">
+                    <div class="filter-header">
+                        <i class="fa-solid fa-chevron-left"></i>
+                        <h2>Filtrlər</h2>
+                        <span>Sıfırla</span>
+                    </div>
+                       <div class="filter-header">
+                        <p>Şəhərlər</p>
+                        <i class="fa-solid fa-chevron-down"></i>
+                       </div>
+                        <div id="mark-and-model">
+                            <h5>Marka və model</h5>
+                            <div id="marks">
+                                <div class="mark">
+                                    <img src="img/mercedes.png" alt="" />
+                                    <p>Mercedes</p>
+                                </div>
+                                <div class="mark">
+                                    <img src="img/lada.png" alt="" />
+                                    <p>Lada (VAZ)</p>
+                                </div>
+                                <div class="mark">
+                                    <img src="img/honda.png" alt="" />
+                                    <p>Hundai</p>
+                                </div>
+                                <div class="mark">
+                                    <img src="img/kia.png" alt="" />
+                                    <p>Kia</p>
+                                </div>
+                                <div class="mark">
+                                    <img src="img/toyota.png" alt="" />
+                                    <p>Toyota</p>
+                                </div>
+                                <div class="mark">
+                                    <img src="img/bmw.png" alt="" />
+                                    <p>Bmw</p>
+                                </div>
+                                <div class="mark">
+                                    <img src="img/opel.png" alt="" />
+                                    <p>Opel</p>
+                                </div>
+                                <div class="mark">
+                                    <img src="img/Ford.png" alt="" />
+                                    <p>Ford</p>
+                                </div>
+                            </div>
+                            <button>Bütün markaları göstər</button>
+                            <div class="btn-group">
+                                <button>Hamısı</button>
+                                <button>Yeni</button>
+                                <button>Sürülmüş</button>
+                            </div>
+                        </div>
+                  </div>
+
+
+                  <div id="links">
+                    <a href="">Kreditlə</a>
+                    <a href="">Barter</a>
+                    <a href="">Aksesuarlar</a>
+                    <a href="">Şinlər</a>
+                    <a href="">İcarə</a>
+                  </div>
+               </nav>
+            </header>
+
+
+            <main>
+                <h3>premium elanlar</h3>
+                <div id="cards">        
+                </div>
+
+                <div id="menu">
+                    <div id="home">
+                        <i class="fa-solid fa-house" onclick="changePage(this, home)"></i>
+                        <p>Əsas</p>
+                    </div>
+                    <div id="liked">
+                        <i class="fa-solid fa-heart" onclick="changePage(this, like)"></i>
+                        <p>Seçilmişlər</p>
+                    </div>
+
+                    <div id="new">
+                        <img src="img/plus.svg" alt="yeni elan" />
+                        <p id="new-p">Yeni elan</p>
+                    </div>
+
+                    <div id="user">
+                        <i class="fa-solid fa-circle-user"></i>
+                        <p>Kabinet</p>
+                    </div>
+                    <div id="bar">
+                        <i class="fa-solid fa-bars"></i>
+                        <p>Daha çox</p>
+                    </div>
+                </div>
+            </main>
+
+
+            <footer>
+
+                <div id="sec1">
+                    <a href="">Qaydalar</a>
+                    <a href="">İstifadəçi razılaşması</a>
+                    <a href="">Reklam yerləşdirin</a>
+                </div>
+          
+                <div id="sec2">
+                    <p>Dəstək xidməti</p>
+                    <p id="number">
+                        (012) 505-77-55
+                    </p>
+                    <span>İş saatları — Həftə içi: 09:00-19:00 | Şənbə: 09:00-13:00</span>
+                    <div id="footer-icons">
+                        <div class="icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-brands fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+               
+                <div id="sec3">
+                    <a href="">Tam versiya</a>
+                    <a href="">Русский язык</a>
+                    <span>Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş elanların məzmununa görə məsuliyyət daşımır.</span>
+                    <span>© 2006-2024 Digital Classifieds MMC. VÖEN: 1405631661</span>
+                </div>
+
+            </footer>
+
+
+
+            <script src="script.js"></script>
+        </body>
+</html>
