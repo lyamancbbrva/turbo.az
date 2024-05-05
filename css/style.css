@@ -493,7 +493,7 @@ footer {
 .search i {
     color: #8d94ad;
     position: absolute;
-    bottom: 89.6%;
+    bottom: 89%;
     left: 30px;
     z-index: 99999999999;
 }

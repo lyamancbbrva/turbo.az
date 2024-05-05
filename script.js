@@ -867,6 +867,7 @@ const mainSearchNone = document.querySelector('.main-search')
 const nav = document.querySelector('#nav')
 const mobileNav = document.querySelector('#mobile-nav')
 const links = document.querySelector('#links')
+const searchMark = document.querySelector("#searchMark")
 
 
 let flag = true;
@@ -934,6 +935,12 @@ const brand = new Set(data.cars.map((item) => item.brand));
 brand.forEach(
     (item) => (markalar.innerHTML += `<p onclick="filterForBrand('${item.toLowerCase()}')">${item}</p>`)
 );
+
+function searchMarks(){
+  markalar.innerHTML = ''
+  data.cars.filter(item => item.brand.toLowerCase().includes(searchMark.value.toLowerCase())).map(item => markalar.innerHTML += `<p onclick="filterForBrand('${item.brand.toLowerCase()}')">${item.brand}</p>`)
+
+}
 
 // avtomobilleri like eden funksiya
 function like(i, id) {
