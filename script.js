@@ -863,6 +863,11 @@ const homeIcon = document.querySelector('#home-icon')
 const likeIcon = document.querySelector('#like-icon')
 const userIcon = document.querySelector('#user-icon')
 const moreIcon = document.querySelector('#more-icon')
+const mainSearchNone = document.querySelector('.main-search')
+const nav = document.querySelector('#nav')
+const mobileNav = document.querySelector('#mobile-nav')
+const links = document.querySelector('#links')
+
 
 let flag = true;
 
@@ -934,11 +939,8 @@ brand.forEach(
 function like(i, id) {
     let chooseCar = data.cars.find((item) => id == item.id);
     choosenCars.push(chooseCar);
-  flag
-    ? ((i.style.fontWeight = "bold"), (i.style.color = "red"), flag == false)
-    : ((i.style.fontWeight = "initial"),
-    (i.style.color = "white"),
-    flag == true);
+  flag ? (i.style.fontWeight = "bold", i.style.color = "red", flag = false): (i.style.fontWeight = "initial",i.style.color = "white",flag = true);
+    console.log(flag);
 }
 
 // sehifeleri deyisen funksiya
@@ -951,6 +953,8 @@ function changePage(x) {
   header.style.display = 'none'
   kabinet.style.display = 'none'
   dahaCox.style.display = 'none'
+  mobileNav.style.display = 'block'
+  links.style.display = 'block'
   homeIcon.style.color = '#B1B5C7FF'
   likeIcon.style.color = '#B1B5C7FF'
   moreIcon.style.color = '#B1B5C7FF'
@@ -962,6 +966,10 @@ function changePage(x) {
     footer.style.display = 'block'
     main.style.display = 'block'
     likeIcon.style.color = 'red'
+    mainSearchNone.style.display = 'none'
+    header.style.display = 'block'
+    mobileNav.style.display = 'none'
+    links.style.display = 'none'
  
     cards.innerHTML = "";
     if (choosenCars.length == 0) {
@@ -1004,20 +1012,17 @@ function changePage(x) {
     main.style.display = 'block'
     cards.innerHTML = ''
     moreIcon.style.color = '#ca1016'
+    preElanlar.innerHTML = ''
 
   }
 }
 changePage('home')
-
-function sil(id){
-    
-    console.log(id);
-    let index = choosenCars.findIndex((item )=> item.id == id)
-    console.log(index);
-    choosenCars.splice(index, 1)
-
-
+function sil(id) {
+  console.log(id);
+  const index = choosenCars.find(item => item.id === id);
+  choosenCars.splice(index, 1)
 }
+
 
  //selectin valuelarini sifirlayan funksiya
 

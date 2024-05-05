@@ -31,14 +31,13 @@
                                 <i class="fa-solid fa-heart"></i>
                                 <p onclick="changePage('like')">Seçilmişlər</p>
                             </span>
-                            <div class="user df">
+                            <div class="user df"  onclick="changePage('kabinet')">
                                 <i class="fa-solid fa-circle-user"></i> 
-                                <p onclick="login()">Giriş</p>
+                                <p>Giriş</p>
                             </div>
                         </div>
                       </div>
-                    </div>
-               
+                    </div>    
                     <div class="nav-buttom">
                         <div class="container">
                             <div class="buttom-left">
@@ -77,29 +76,6 @@
                             <div class="buttom-right">
                                 <button onclick="yeniElan()"><span>✚</span>Yeni elan</button>
                             </div>
-                        </div>
-                    </div>
-               
-                    <div class="secilmisler container">
-                        <h3 class="p20">SEÇİLMİŞ ELANLAR</h3>
-                        <div class="secilmis-main p20">
-                            <div class="text">
-                                <img src="img/fav.svg" alt="">
-                                <p>Bəyəndiyiniz elanları ürək işarəsinə klik edərək seçilmişlərə əlavə edin.</p>
-                            </div>
-                        </div>
-                    </div>
-                
-                
-                    <div class="login">
-                        <div class="loginform">
-                            <div class="login-sum">
-                                <h1>TURBO.AZ</h1>
-                                <p class="txtgray p10">Öz elanlarınıza baxmağın, onları redaktə və <br> bərpa etməyin rahat yolu</p>
-                                <button>Telefon nömrəsi ilə giriş</button> <br>
-                                <button>Biznes hesabınıza giriş</button>
-                            </div>
-                            <p class="txtgray">Saytda avtorizasiyadan keçməklə siz Turbo.az-ın <a href=""> İstifadəçi razılaşmasını</a> və <a href="">Qaydalarını</a>  qəbul etdiyinizi təsdiqləmiş olursunuz.</p>
                         </div>
                     </div>
                     <div class="yenielan">
@@ -470,6 +446,7 @@
                             </div>
                         </div>
                     </div>
+                </div>               
                 </div>
                 <div id="mobile-nav">
                     <div id="mobile-logo">
@@ -561,7 +538,6 @@
                             </div>
                         </div>
                         <div class="btn">
-            
                             <button class="butun-markalar">Bütün markaları göstər</button>
                         </div>
                     </div>
@@ -805,7 +781,6 @@
                         <img src="img/plus.svg" alt="yeni elan" />
                         <p id="new-p">Yeni elan</p>
                     </div>
-
                     <div id="user">
                         <i class="fa-solid fa-circle-user" id="user-icon"  onclick="changePage( 'kabinet')"></i>
                         <p>Kabinet</p>
