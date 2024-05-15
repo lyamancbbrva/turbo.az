@@ -1,7 +1,14 @@
 :root {
     --red: #ca1016;
 }
-
+.active-heart{
+    font-weight: bold !important;
+    color: red !important;
+}
+.active-credit-btn{
+    border: 1px solid #ca1016 !important;
+    background: #ffe6e5 !important;
+}
 #mobile-logo {
     display: flex;
     justify-content: space-between;
@@ -493,7 +500,7 @@ footer {
 .search i {
     color: #8d94ad;
     position: absolute;
-    bottom: 88%;
+    bottom: 90%;
     left: 30px;
     z-index: 99999999999;
 }
@@ -620,7 +627,7 @@ footer {
     }
 
     #desktop-nav,
-    #desktop-footer {
+    #desktop-footer, .main-search {
         display: initial;
     }
 
@@ -638,7 +645,9 @@ footer {
     .card img {
         min-height: 20vh;
     }
-
+    #oturucu{
+        margin-top: 15px;
+    }
     #nav1 {
         display: flex;
         justify-content: space-between;
@@ -708,6 +717,7 @@ footer {
     }
 
     #drp:hover .down {
+        z-index: 999999;
         display: block
     }
 

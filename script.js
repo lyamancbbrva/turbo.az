@@ -883,7 +883,7 @@ function show() {
                         <div class="card-img">
                                 <img src="${item.images}" />
                         </div>
-                        <i class="fa-regular fa-heart" onclick="like(this, ${item.id})"></i>
+                        <i class="fa-regular fa-heart" id="" onclick="like(this, ${item.id})"></i>
                         <div class="card-bottom">
                             <p class="price">${item.price} ${item.currency}</p>
                             <p>${item.brand}, ${item.model}</p>
@@ -944,11 +944,14 @@ function searchMarks(){
 
 // avtomobilleri like eden funksiya
 function like(i, id) {
-    let chooseCar = data.cars.find((item) => id == item.id);
-    choosenCars.push(chooseCar);
-  flag ? (i.style.fontWeight = "bold", i.style.color = "red", flag = false): (i.style.fontWeight = "initial",i.style.color = "white",flag = true);
-    console.log(flag);
+
+  let chooseCar = data.cars.find((item) => id == item.id);
+  choosenCars.push(chooseCar);
+  i.classList.toggle('active-heart');
+
+
 }
+
 
 // sehifeleri deyisen funksiya
 function changePage(x) {
@@ -1024,17 +1027,35 @@ function changePage(x) {
   }
 }
 changePage('home')
-function sil(id) {
-  console.log(id);
-  const index = choosenCars.find(item => item.id === id);
-  choosenCars.splice(index, 1)
-}
 
+
+
+
+function sil(id) {
+
+  cards.innerHTML = ''
+  choosenCars.splice(id - 1, 1); 
+  
+  choosenCars.forEach(item => cards.innerHTML += `
+  <div class="card">
+                  <div class="card-img">
+                          <img src="${item.images}" />
+                  </div>
+                  <i class="fa-regular fa-heart"  style="color:red; font-weight: bold"  onclick="sil(${item.id })"></i>
+                  <div class="card-bottom">
+                      <p class="price">${item.price} ${item.currency}</p>
+                      <p>${item.brand}, ${item.model}</p>
+                      <p>2023, ${item.engine}L, ${item.odometer} ${item.odometerUnit}</p>
+                      <span>${item.city},bugün,${item.banType} 13:59</span>
+                  </div>
+
+              </div>
+  `)
+}
 
  //selectin valuelarini sifirlayan funksiya
 
  function reset(){
-  
     markaInp.value = ''
     modelInp.value = ''
     cityInp.value = ''
@@ -1042,7 +1063,9 @@ function sil(id) {
     valyutaInp.value = ''
     qiymetMax.value = ''
     qiymetMin.value = ''
-show()
+
+    show()
+
  }
 
 
@@ -1069,14 +1092,13 @@ function colorBtn(btn){
 
 //ayriseckilik eden funksiya
 function masinlariFilterle(){
-    
+  console.log(maxil.value);
     cards.innerHTML = '';
-
-
     data.cars.filter(item => item.brand.includes(markaInp.value) && item.model.includes(modelInp.value) &&
                         (item.city.includes(cityInp.value)) &&
                         item.banType.includes(banInp.value) &&
                         item.currency.includes(valyutaInp.value)
+                        
                         
                     ).map(item => {
                                 cards.innerHTML += `
@@ -1087,26 +1109,22 @@ function masinlariFilterle(){
                                         <i class="fa-regular fa-heart" onclick="like(this, ${item.id})"></i>
                                         <div class="card-bottom">
                                             <p class="price">${item.price} ${item.currency}</p>
-                                            <p>${item.brand}, ${item.model}</p>
+                                            <p>${item.brand}, ${item.year}</p>
                                             <p>2023, ${item.engine}L, ${item.odometer} ${item.odometerUnit}</p>
                                             <span>${item.city}, bugün, ${item.banType} 13:59</span>
                                         </div>
                                     </div>
                                 `;
                             });
-
-  
 }
 
 //barter ve kredit funksiyasi
 
-
-
-function choose(arg) {
+function choose(btn,arg) {
+    btn.classList.toggle('active-credit-btn')
     cards.innerHTML = '';
     data.cars.forEach(item => {
         if ((arg === 'kredit' && item.credit) || (arg === 'barter' && item.barter)) {
-         
             cards.innerHTML += `
                 <div class="card">
                     <div class="card-img">
@@ -1123,24 +1141,6 @@ function choose(arg) {
             `;
         }
     });
-
-    if(arg === 'kredit'){
-        kreditBtn.style.border = "1px solid red"
-        kreditBtn.style.background = "#ffe6e5"
-        kreditBtn.style.color = '#ca1016'
-        barterBtn.style.border = "1px solid #dbd8d8"
-        barterBtn.style.background = "#fff"
-        barterBtn.style.color = 'initial'
-    
-    }else{
-        barterBtn.style.border = "1px solid red"
-        barterBtn.style.background = "#ffe6e5"
-        barterBtn.style.color = '#ca1016'
-        kreditBtn.style.border = "1px solid #dbd8d8"
-        kreditBtn.style.background = "#fff"
-        kreditBtn.style.color = 'initial'
-
-    }
 }
 
 //mobilde filterliyen funksiya

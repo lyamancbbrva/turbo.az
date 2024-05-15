@@ -346,8 +346,8 @@
                                     <select id="valyuta">
                                         <option value="" disabled selected hidden> AZN</option>
                                     </select>
-                                    <button onclick="choose('kredit')" id="kreditBtn">Kredit</button>
-                                    <button onclick="choose('barter')" id="barterBtn">Barter</button>
+                                    <button onclick="choose(this,'kredit')" id="kreditBtn">Kredit</button>
+                                    <button onclick="choose(this,'barter')" id="barterBtn">Barter</button>
                                 </div>
                                 <select id="ban">
                                     <option value="" disabled selected hidden>Ban növü</option>
@@ -580,8 +580,7 @@
                             <p>Hansı bazar üçün yığılıb</p>
                             <i class="fa-solid fa-chevron-down"></i>
                         </div>
-                   <div class="bg-gray"></div>
-            
+                   <div class="bg-gray"></div>       
                     </div>
                     <div class="btn-groups">
                         <p>Status</p>
@@ -709,8 +708,7 @@
                     <div class="mark" onclick="filterForBrand('toyota')"><img src="img/toyota.png" alt=""/><p>Toyota</p></div>
                     <div class="mark" onclick="filterForBrand('bmw')"><img src="img/bmw.png" alt=""/><p>BMW</p></div>
                     <div class="mark" onclick="filterForBrand('opel')"><img src="img/opel.png" alt=""/><p>Opel</p></div>
-                    <div class="mark" onclick="filterForBrand('ford')"><img src="img/Ford.png" alt=""/><p>Ford</p></div>
-                    
+                    <div class="mark" onclick="filterForBrand('ford')"><img src="img/Ford.png" alt=""/><p>Ford</p></div>            
                     <div id="markalar"></div>
                 </div>
                </div>
